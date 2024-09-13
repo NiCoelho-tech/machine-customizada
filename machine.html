@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title> 
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card-container">
+        <h1>Number base converter</h1>
+
+        <br /><br />
+
+        <div class="numbersToConvert">
+          <h3>Decimal</h3>
+          <input
+            id="ipt_dec"
+            type="text"
+            placeholder="Digite o valor em decimal"
+          />
+
+          <button onclick="converterDec()">Converter</button>
+
+          <div id="div_msg1"></div>
+
+          <br /><br />
+
+          <h3>Binário</h3>
+          <input
+            id="ipt_bin"
+            type="text"
+            placeholder="Digite o valor em binário"
+          />
+
+          <button onclick="converterBin()">Converter</button>
+
+          <div id="div_msg2"></div>
+
+          <br /><br />
+
+          <h3>Octal</h3>
+          <input
+            id="ipt_oct"
+            type="text"
+            placeholder="Digite o valor em octal"
+          />
+
+          <button onclick="converterOct()">Converter</button>
+
+          <div id="div_msg3"></div>
+
+          <br /><br />
+
+          <h3>Hexadecimal</h3>
+          <input
+            id="ipt_hex"
+            type="text"
+            placeholder="Digite o valor em hexadecimal"
+          />
+
+          <button onclick="converterHex()">Converter</button>
+
+          <div id="div_msg4"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function converterDec() {
+      let numeroDec = Number(ipt_dec.value);
+      let binaria = numeroDec.toString(2);
+      let octal = numeroDec.toString(8);
+      let hexadecimal = numeroDec.toString(16);
+
+      div_msg1.innerHTML = `O numero em octal é: <b>${octal}</b><br>
+                            O numero em hexadecimal é: <b>${hexadecimal}</b><br>
+                            O numero em binário é: <b>${binaria}</b>`;
+
+      console.log(numeroDec, octal, hexadecimal);
+    }
+
+    function converterBin() {
+      let numeroBin = Number(ipt_bin.value);
+      let decimal = parseInt(numeroBin, 2);
+      let octal = parseInt(numeroBin, 2).toString(8);
+      let hexadecimal = parseInt(numeroBin, 2).toString(16);
+
+      div_msg2.innerHTML = `O número em decimal é: <b>${decimal}</b><br>
+                            O número em octal é: <b>${octal}</b><br>
+                            O número em hexadecimal é: <b>${hexadecimal}</b><br>`;
+
+      console.log(numeroBin, decimal, octal, hexadecimal);
+      
+    }
+
+    function converterOct() {
+      let numeroOct = Number(ipt_oct.value);
+      let decimal = parseInt(numeroOct, 8).toString(10);
+      let binaria = parseInt(numeroOct, 8).toString(2);
+      let hexadecimal = parseInt(numeroOct, 8).toString(16);
+
+      div_msg3.innerHTML = `O número em decimal é: <b>${decimal}</b><br>
+                            O número em binário é: <b>${binaria}</b><br>
+                            O número em hexadecimal é: <b>${hexadecimal}</b>`;
+
+      console.log(numeroOct, decimal, binaria, hexadecimal);
+      
+    }
+
+    function converterHex() {
+      let numeroHex = ipt_hex.value;
+      let decimal = parseInt(numeroHex, 16).toString(10);
+      let binaria = parseInt(numeroHex, 16).toString(2);
+      let octal = parseInt(numeroHex, 16).toString(8);
+
+      div_msg4.innerHTML = `O número em decimal é: <b>${decimal}</b><br>
+                            O número em binário é: <b>${binaria}</b><br>
+                            O número em octal é: <b>${octal}</b>`;
+    }
+  </script>
+</html>

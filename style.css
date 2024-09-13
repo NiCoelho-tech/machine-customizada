@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #28282B;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 25px 0px 25px 0px;
+}
+
+.container .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 300px;
+    padding: 55px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container .card-container h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container .card-container .numbersToConvert input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    font-family: 'Poppins', sans-serif;
+    width: 300px;
+}
+
+.container .card-container .numbersToConvert button {
+    padding: 10px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: #D22B2B;
+    border-radius: 5px;
+    color: #fff;
+    transition: .2s ease-in;
+}
+
+.container .card-container .numbersToConvert button:hover {
+    cursor: pointer;
+    background-color: #D2042D;
+    transition: .2s ease-out;
+}
+
+.container .card-container .numbersToConvert div {
+    margin-top: 10px;
+}
+
